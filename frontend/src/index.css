@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 160 70% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 70% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 220 15% 85%;
+    --sidebar-primary: 220 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 35% 18%;
+    --sidebar-accent-foreground: 220 15% 95%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 220 70% 55%;
+    --sidebar-muted: 222 20% 35%;
+
+    /* POS-specific tokens */
+    --pos-success: 160 70% 42%;
+    --pos-warning: 38 92% 50%;
+    --pos-danger: 0 72% 51%;
+    --pos-info: 220 70% 50%;
+    --pos-surface: 0 0% 100%;
+    --pos-surface-hover: 220 20% 97%;
+    --pos-header: 222 47% 11%;
+    --pos-header-foreground: 0 0% 100%;
+    --pos-badge-low: 0 72% 51%;
+    --pos-badge-ok: 160 70% 42%;
+    --pos-badge-warn: 38 92% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 220 15% 95%;
+    --card: 222 40% 10%;
+    --card-foreground: 220 15% 95%;
+    --popover: 222 40% 10%;
+    --popover-foreground: 220 15% 95%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 220 15% 95%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 160 70% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 220 70% 55%;
+    --sidebar-background: 222 50% 6%;
+    --sidebar-foreground: 220 15% 75%;
+    --sidebar-primary: 220 70% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 35% 12%;
+    --sidebar-accent-foreground: 220 15% 95%;
+    --sidebar-border: 222 30% 14%;
+    --sidebar-ring: 220 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pos-card {
+    @apply bg-card rounded-xl border border-border shadow-sm transition-all duration-200;
+  }
+
+  .pos-card-hover {
+    @apply pos-card hover:shadow-md hover:border-primary/20;
+  }
+
+  .pos-stat-card {
+    @apply pos-card p-6 relative overflow-hidden;
+  }
+
+  .pos-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(220 70% 40%));
+  }
+
+  .pos-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(160 70% 35%));
+  }
+
+  .pos-gradient-warning {
+    background: linear-gradient(135deg, hsl(var(--pos-warning)), hsl(25 90% 45%));
+  }
+
+  .pos-gradient-danger {
+    background: linear-gradient(135deg, hsl(var(--pos-danger)), hsl(350 70% 45%));
+  }
+
+  .pos-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .pos-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .pos-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  .stock-pulse {
+    animation: stockPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes stockPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+}

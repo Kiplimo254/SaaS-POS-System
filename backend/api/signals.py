@@ -1,0 +1,29 @@
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.contrib.auth.models import User
+from .models import UserProfile, Shop
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        # Get or create a default shop for development
+        default_shop, _ = Shop.objects.get_or_create(
+            name="Default Shop",
+            defaults={
+                "address": "123 Main St",
+                "contact_number": "555-0101",
+                "email": "admin@pos.com"
+            }
+        )
+        UserProfile.objects.get_or_create(
+            user=instance,
+            defaults={
+                'shop': default_shop,
+                'role': 'ADMIN' if instance.is_superuser else 'CASHIER'
+            }
+        )
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    if hasattr(instance, 'profile'):
+        instance.profile.save()
