@@ -2,7 +2,7 @@
 
 A comprehensive, multi-tenant Point of Sale (POS) system designed for small to medium-sized businesses. This project features a robust Django backend and a modern, responsive Vite/React frontend.
 
-## 🚀 Features
+##  Features
 
 - **Multi-tenant Architecture**: Support for multiple shops within a single installation.
 - **User Roles & Permissions**: Specialized roles for Super Admins, Admins, Managers, and Cashiers.
@@ -24,11 +24,11 @@ A comprehensive, multi-tenant Point of Sale (POS) system designed for small to m
     - Detailed sales reporting (tax, discounts, etc.).
 - **Printable Receipts**: Professional receipt generation using `react-to-print` and `jspdf`.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - **Framework**: Django
-- **Database**: SQLite (default, can be configured for PostgreSQL/MySQL)
+- **Database**: PostgreSQL/MySQL
 - **Features**: REST API, Barcode generation (`python-barcode`), Image handling.
 
 ### Frontend
@@ -39,7 +39,7 @@ A comprehensive, multi-tenant Point of Sale (POS) system designed for small to m
 - **Validation**: Zod & React Hook Form
 - **Routing**: React Router DOM
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 - Python 3.10+
@@ -90,3 +90,4 @@ This project is licensed under the MIT License.
 
 **Victor Kiplimo** - [victorkiplimo74@gmail.com](mailto:victorkiplimo74@gmail.com)
 GitHub: [Kiplimo254](https://github.com/Kiplimo254)
+## CONTACT FOR THE ONBOARDING PROCESS.
