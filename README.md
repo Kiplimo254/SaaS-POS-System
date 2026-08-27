@@ -87,8 +87,7 @@ A comprehensive, multi-tenant Point of Sale (POS) system designed for small to m
 This project is licensed under the MIT License.
 
 ## 👤 Author
-
-**Victor Kiplimo** - [victorkiplimo74@gmail.com](mailto:victorkiplimo74@gmail.com)
+## VICTOR CREATIONS
 GitHub: [Kiplimo254](https://github.com/Kiplimo254)
 ## CONTACT FOR THE ONBOARDING PROCESS.
 ## LIVE DEMO LINKS AVAILABLE
